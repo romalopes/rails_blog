@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 end
 
-def set_user 
+def set_user
   # @user = current_user
   @user = User.find(params[:id])
 end

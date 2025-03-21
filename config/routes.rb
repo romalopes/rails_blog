@@ -2,14 +2,16 @@ Rails.application.routes.draw do
   get "users/profile"
   # devise_for :users
   devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    sessions: "users/sessions",
+    registrations: "users/registrations"
   }
-  resources :posts
-  get "home", to: 'pages#home'
-  get 'about', to: "pages#about"
+  resources :posts do
+      resources :comments
+  end
+  get "home", to: "pages#home"
+  get "about", to: "pages#about"
 
-  get '/u/:id', to: 'users#profile', as: 'user'
+  get "/u/:id", to: "users#profile", as: "user"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -23,5 +25,4 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "pages#home"
-
 end
