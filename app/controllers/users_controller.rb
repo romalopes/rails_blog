@@ -3,9 +3,9 @@ class UsersController < ApplicationController
   def profile
    @user.update(views: @user.views + 1)
   end
-end
 
-def set_user
-  # @user = current_user
-  @user = User.find(params[:id])
+  def set_user
+    # @user = current_user
+    @user = User.find(params[:id])
+  end
 end
