@@ -52,6 +52,7 @@ Noticed gem
 https://github.com/excid3/noticed
 bundle add "noticed"
 rails generate noticed:model
+rails g noticed:notification Comment
 
 rails g mailer UserMailer new_comment
 CommentNotifier.with(record: Comment.last).deliver(User.first)

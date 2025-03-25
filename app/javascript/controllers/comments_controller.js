@@ -25,6 +25,27 @@ export default class extends Controller {
     editBody.classList.toggle('d-none');
     editForm.classList.toggle('mt-5');
 
-
+    const editButtonId = event.params["edit"];
+    console.log(editButtonId);
+    const editButton = document.getElementById(editButtonId);
+    console.log(editButton);
+    this.toggleEditButton(editButton)
   }
+
+  toggleEditButton(editButton) { 
+    if (editButton.innerText == "Edit") {
+      editButton.innerText = "Cancel";
+      this.toggleEditButtonClass(editButton)
+    } else {
+      editButton.innerText = "Edit";
+      this.toggleEditButtonClass(editButton)
+    }
+  }
+
+  toggleEditButtonClass(editButton) {
+    editButton.classList.toggle("btn-secondary");
+    editButton.classList.toggle("btn-warning");
+  }
+
+
 }
