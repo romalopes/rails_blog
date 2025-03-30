@@ -60,3 +60,10 @@ bundle add ransack
 Admin
 rails g migration add_role_to_user role:integer
 rails g migration remove_body_from_post
+
+bundle add friendly_id
+rails g migration AddSlugToPost slug:uniq
+rails g friendly_id
+
+bundle add bullet
+rails g bullet:install
