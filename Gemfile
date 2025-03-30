@@ -75,3 +75,5 @@ gem "ruby-lsp"
 gem "friendly_id", "~> 5.5"
 
 # gem "bullet", "~> 7.2"
+
+gem "bullet", "~> 8.0"
