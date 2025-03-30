@@ -54,7 +54,9 @@ bundle add "noticed"
 rails generate noticed:model
 rails g noticed:notification Comment
 
-rails g mailer UserMailer new_comment
-CommentNotifier.with(record: Comment.last).deliver(User.first)
+Search
+bundle add ransack
 
-NSERT INTO "noticed*events" ("type", "record_type", "record_id", "params", "created_at", "updated_at", "notifications_count") VALUES ('CommentNotifier', 'Comment', 9, '{"\_aj_symbol_keys":[]}', '2025-03-25 02:36:39.649527', '2025-03-25 02:36:39.649527', 1) RETURNING "id" /\_application='NewBlog'*/
+Admin
+rails g migration add_role_to_user role:integer
+rails g migration remove_body_from_post

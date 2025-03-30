@@ -17,6 +17,9 @@
         <li class="nav-item">
           <%= link_to "Blog", posts_path, class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Search", search_path, class: "nav-link" %>
+        </li>
       </ul>
       <%
 =begin%>
@@ -54,6 +57,7 @@
       <%
 =end%>
       <ul class="navbar-nav">
+        <%= render "search/form" %>
         <%= render 'layouts/notifications' %>
         <%= render 'user/user_manager' %>
       </ul>

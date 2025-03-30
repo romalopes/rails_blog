@@ -7,6 +7,24 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :notifications, as: :recipient, dependent: :destroy
-  # has_many :notifications, as: :recipient, dependent: :destroy, class_name: "Noticed::Notification"
-  # has_many :notification_mentions, as: :record, dependent: :destroy, class_name: "Noticed::Event"
+
+  # enum role: { user: "user", admin: "admin" }
+  # enum role: {user: 0, admin: 1}
+  # enum role: [ :user, :admin ]
+  # enum role: %i[user admin]
+  enum :role, { user: 0, admin: 1}#, _suffix: true
+  after_initialize :set_default_role, if: :new_record?
+
+  private
+    def set_default_role
+      self.role ||= :user
+    end
+
+    def self.ransackable_attributes(auth_object = nil)
+      [ "created_at", "email", "encrypted_password", "id", "id_value", "integer", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "updated_at", "views" ]
+    end
+
+    def self.ransackable_associations(auth_object = nil)
+      ["comments", "notifications", "posts"]
+    end
 end

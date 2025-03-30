@@ -67,3 +67,11 @@ group :test do
 end
 
 gem "noticed", "~> 1.5"
+
+gem "ransack", "~> 4.3"
+
+gem "ruby-lsp"
+
+gem "friendly_id", "~> 5.5"
+
+# gem "bullet", "~> 7.0"

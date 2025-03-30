@@ -18,7 +18,7 @@
 
 <div>
   <%= form.label :body, style: "display: block" %>
-  <%= form.textarea :body %>
+  <%= form.rich_text_area :body %>
 </div>
 
 <h4>Posting by: <%= link_to "#{current_user.name}", user_path(current_user.id)  %></h4>
