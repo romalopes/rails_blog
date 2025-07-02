@@ -66,7 +66,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "noticed", "~> 1.5"
+gem "noticed", "~> 2.7"
 
 gem "ransack", "~> 4.3"
 
